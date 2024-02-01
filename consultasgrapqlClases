@@ -15,7 +15,20 @@ selesct
 insert
 
 mutation {
-  addTruck( brand: "Toyota", model: "2023", color: "Negro", numberId: "HJQ313", isAvailable: true) {
+  addTruck( brand: "hyundai", model: "2024", color: "blanco", numberId: "CPn67E", isAvailable: false) {
+    id
+    brand
+    model
+    color
+    numberId
+    isAvailable
+  }
+}
+
+
+consultar por id 
+{
+  truck(id: 1) {
     id
     brand
     model

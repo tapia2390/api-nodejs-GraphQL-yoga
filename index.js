@@ -18,8 +18,9 @@ var schema = buildSchema(`
 
   type Query {
     	trucks: [Truck]
-    	Truck(id: Int): Truck
+    	truck(id: Int): Truck
   	}
+
 
   type Mutation {
     	addTruck(brand: String, model: String, color: String, numberId: String, isAvailable: Boolean): Truck
@@ -35,10 +36,13 @@ var root = {
     trucks: () => { return trucks; },
 
     truck: ( data ) => { 
+    console.log(trucks)
 	for ( var i=0; i<trucks.length; i++ ) 
 		if ( trucks[i].id==data.id ) 
 			return trucks[i]; 
+        
 
+    
 	return null; 
 	},
 
